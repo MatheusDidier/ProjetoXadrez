@@ -8,8 +8,8 @@ namespace xadrez_console.tabuleiro
 {
     class Tabuleiro
     {
-        public int Linha{get;set;}
-        public int Coluna{get;set;}
+        public int Linha { get; set; }
+        public int Coluna { get; set; }
         private Peca[,] pecas;
 
         public Tabuleiro(int linha, int coluna)
@@ -18,5 +18,12 @@ namespace xadrez_console.tabuleiro
             this.Coluna = coluna;
             pecas = new Peca[linha, coluna];
         }
+
+        public Peca peca(int i, int j)
+        {
+            return pecas[i, j];
+        }
+
+
     }
 }
