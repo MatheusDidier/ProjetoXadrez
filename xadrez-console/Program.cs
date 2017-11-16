@@ -13,11 +13,13 @@ namespace xadrez_console
         static void Main(string[] args)
         {
             PosicaoXadrez pos = new PosicaoXadrez('a', 1);
+            Tabuleiro tab = new Tabuleiro(8, 8);
+            tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(3, 5));
+            tab.colocarPeca(new Torre(tab, Cor.Branca), new Posicao(1, 4));
+            Tela.imprimirTabuleiro(tab);
 
-            Console.WriteLine(pos.toPosicao());
 
-            Console.WriteLine("A - B = " + ('a' - 'b'));
-            Console.WriteLine("A - C = " + ('c' - 'a'));
+            
             Console.ReadKey();
             
             
