@@ -24,6 +24,11 @@ namespace xadrez_console.tabuleiro
             return pecas[i, j];
         }
 
+        public void colocarPeca(Peca p, Posicao pos)
+        {
+            pecas[pos.Linha, pos.Coluna] = p;
+            p.Posicao = pos;
+        }
 
     }
 }
