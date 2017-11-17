@@ -46,12 +46,30 @@ namespace xadrez_console.xadrez
             }
 
         }
+
         public void realizaJogada(Posicao origem, Posicao destino)
         {
             executaMovimento(origem, destino);
             turno++;
             mudaJogador();
+        }
 
+        public void validarPosicaoDeOrigem(Posicao pos)
+        {
+   
+            if (tabuleiro.peca(pos) == null)
+            {
+                throw new TabuleiroException("Não existe peça na posição de origem escolhida!");
+            }
+
+            if (jogadorAtual != tabuleiro.peca(pos).Cor)
+            {
+                throw new TabuleiroException("A peça de origem escolhida não é sua!");
+            }
+            if (!tabuleiro.peca(pos).existeMovimentosPossiveis())
+            {
+                throw new TabuleiroException("Não há movimento possiveis para a peça escolhida!");
+            }
         }
 
         private void colocarPecas()

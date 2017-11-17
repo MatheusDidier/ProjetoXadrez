@@ -82,6 +82,10 @@ namespace xadrez_console
         public static PosicaoXadrez lerPosicaoXadrez()
         {
             string s = Console.ReadLine();
+            if (s == "" || s.Length >= 3 || s.Length == 1) 
+            {
+                throw new TabuleiroException("Informe uma origem valida!");
+            }
             char coluna = s[0];
             int linha = int.Parse(s[1] + "");
 
