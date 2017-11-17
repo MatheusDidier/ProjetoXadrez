@@ -9,9 +9,9 @@ namespace xadrez_console.xadrez
 {
     class PartidaDeXadrez
     {
-        public Tabuleiro tabuleiro{get; private set;}
-        private int turno;
-        private Cor jogadorAtual;
+        public Tabuleiro tabuleiro { get; private set; }
+        public int turno { get; private set; }
+        public Cor jogadorAtual { get; private set; }
         public bool terminada { get; private set; }
 
 
@@ -20,6 +20,7 @@ namespace xadrez_console.xadrez
             this.tabuleiro = new Tabuleiro(8, 8);
             this.turno = 1;
             jogadorAtual = Cor.Branca;
+            terminada = false;
             colocarPecas();
 
         }
@@ -29,8 +30,27 @@ namespace xadrez_console.xadrez
             Peca p = tabuleiro.retirarPeca(origem);
             p.incrementarQtdMovimentos();
             Peca pecaCapturada = tabuleiro.retirarPeca(destino);
-            tabuleiro.colocarPeca(p,destino);
+            tabuleiro.colocarPeca(p, destino);
 
+
+        }
+        private void mudaJogador()
+        {
+            if (jogadorAtual == Cor.Branca)
+            {
+                jogadorAtual = Cor.Preta;
+            }
+            else
+            {
+                jogadorAtual = Cor.Branca;
+            }
+
+        }
+        public void realizaJogada(Posicao origem, Posicao destino)
+        {
+            executaMovimento(origem, destino);
+            turno++;
+            mudaJogador();
 
         }
 
