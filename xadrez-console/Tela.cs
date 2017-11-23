@@ -129,6 +129,11 @@ namespace xadrez_console
                 Console.WriteLine("XEQUE!");
                 Console.ForegroundColor = aux;
             }
+            if (partida.terminada)
+            {
+                Console.WriteLine("XEQUEMATE");
+                Console.WriteLine("Vencedor " + partida.jogadorAtual);
+            }
             Console.WriteLine();
             Console.Write("Digite a posição de origem: ");
         }
