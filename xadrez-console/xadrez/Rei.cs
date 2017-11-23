@@ -31,7 +31,7 @@ namespace xadrez_console.xadrez
             Posicao pos = new Posicao(0, 0);
             //acima
             pos.definirValores(Posicao.Linha - 1, Posicao.Coluna);
-            if (Tabuleiro.posicaoValida(pos) && podeMover(pos))
+            if (Tabuleiro.posicaoValida(pos) &&     r(pos))
             {
                 mat[pos.Linha, pos.Coluna] = true;
             }
