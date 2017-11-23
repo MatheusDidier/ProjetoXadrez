@@ -30,7 +30,7 @@ namespace xadrez_console.xadrez
             while (Tabuleiro.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.Linha, pos.Coluna] = true;
-                if (Tabuleiro.peca(pos) != null && Tabuleiro.peca(pos).cor != Cor)
+                if (Tabuleiro.peca(pos) != null && Tabuleiro.peca(pos).Cor != Cor)
                 {
                     break;
                 }
